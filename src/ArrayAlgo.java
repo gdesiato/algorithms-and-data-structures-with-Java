@@ -20,6 +20,20 @@ public class ArrayAlgo {
         return null;
     }
 
-    // for unsorted arrays
+
+    public int maxProfit(int[] prices) {
+
+        int profit = 0;
+        int buy = prices[0];
+        
+        for (int sell : prices){
+            if (sell > buy){
+                profit = Math.max(profit, sell - buy);
+            } else {
+                buy = sell;
+            }
+        }
+        return profit;
+    }
 
 }

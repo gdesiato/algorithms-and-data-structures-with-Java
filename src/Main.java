@@ -12,5 +12,12 @@ public class Main {
 
         System.out.println(Arrays.toString(result));
 
+
+        // Sell and Buy Stocks
+        int[] stocks = {7,1,5,3,6,4};
+        int result2 = arrayAlgo.maxProfit(stocks);
+
+        System.out.println(result2);
+
     }
 }
