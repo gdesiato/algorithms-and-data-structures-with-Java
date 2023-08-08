@@ -26,5 +26,12 @@ public class Main {
 
         System.out.println(Arrays.toString(result3));
 
+
+        // Maximum SubArray
+        int[] s = {-1, 4, -3, 8, -5, 6, -1, 2};
+        int result4 = arrayAlgo.maxSubArray(s);
+
+        System.out.println(result4);
+
     }
 }
