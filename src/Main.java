@@ -19,5 +19,12 @@ public class Main {
 
         System.out.println(result2);
 
+
+        // Product of all elements except self
+        int[] n = {1, 3, 6, 3, 2};
+        int[] result3 = arrayAlgo.productExceptSelf(n);
+
+        System.out.println(Arrays.toString(result3));
+
     }
 }
