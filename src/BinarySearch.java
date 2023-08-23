@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class BinarySearch {
@@ -12,6 +14,11 @@ public class BinarySearch {
 
         boolean[] arr = {false, false, true, true, true};
         System.out.println("first true value at index: " + findBoundary(arr));
+
+
+        List<Integer> arrList = new ArrayList<Integer>(Arrays.asList(2, 3, 5, 7, 11, 13, 17, 19));
+        int target = 6;
+        System.out.println(firstNotSmaller(arrList, target));
     }
 
 
@@ -62,5 +69,23 @@ public class BinarySearch {
             }
         }
         return  boundaryIndex;
+    }
+
+    // First Element not Smaller than Target
+    public static int firstNotSmaller(List<Integer> arrlist, int target){
+        int left = 0;
+        int right = arrlist.size() -1;
+        int boundaryIndex = -1;
+
+        while (left <= right){
+            int mid = left + (right -left) /2;
+            if(arrlist.get(mid) >= target){
+                boundaryIndex = mid;
+                right = mid -1;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return boundaryIndex;
     }
 }
