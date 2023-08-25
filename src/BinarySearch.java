@@ -21,6 +21,21 @@ public class BinarySearch {
         System.out.println(firstNotSmaller(arrList, target));
 
 
+        List<Integer> arrList1 = new ArrayList<>(Arrays.asList(1, 3, 3, 3, 3, 6, 10, 10, 10, 100));
+        int target1 = 10;
+        System.out.println(findFirstOccurrence(arrList1, target1));
+
+
+        /*String str = "helloyou";
+        int cut = str.length()-4;
+        String back;
+        System.out.println(back = str.substring(cut));
+        System.out.println(str.substring(str.length()-3, str.length()).toUpperCase());*/
+
+        int num = 7;
+        System.out.println( "The square root, or approx square root, of " + num + " is: " + squareRoot(num));
+
+
     }
 
 
@@ -111,5 +126,33 @@ public class BinarySearch {
         }
         return targetIndex;
 
+    }
+
+
+    // Square Root Estimation
+    // Given an integer, find its square root without using the built-in square root function.
+    // Only return the integer part (truncate the decimals).
+
+    // applying the binary search technique over a range of numbers, not a given array
+    public static int squareRoot(int n) {
+        if(n == 0){
+            return 0;
+        }
+
+        int left = 1;
+        int right = n;
+
+        while (left <= right){
+            int mid = left + (right - left) / 2;
+
+            if( mid == n / mid){
+                return mid;
+            } else if (mid > n /mid){
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return right;
     }
 }
