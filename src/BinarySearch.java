@@ -26,16 +26,13 @@ public class BinarySearch {
         System.out.println(findFirstOccurrence(arrList1, target1));
 
 
-        /*String str = "helloyou";
-        int cut = str.length()-4;
-        String back;
-        System.out.println(back = str.substring(cut));
-        System.out.println(str.substring(str.length()-3, str.length()).toUpperCase());*/
-
         int num = 7;
         System.out.println( "The square root, or approx square root, of " + num + " is: " + squareRoot(num));
 
 
+        List<Integer> arrList2 = new ArrayList<>(Arrays.asList(30, 40, 50, 10, 20));
+        System.out.println(findMinRotated(arrList2));
+        
     }
 
 
@@ -154,5 +151,24 @@ public class BinarySearch {
             }
         }
         return right;
+    }
+
+
+    // find the index of the minimum element in the array
+    public static int findMinRotated(List<Integer> arr) {
+        int left = 0;
+        int right = arr.size() - 1;
+        int boundaryIndex = -1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            // if <= last element, then belongs to lower half
+            if (arr.get(mid) <= arr.get(arr.size() - 1)) {
+                boundaryIndex = mid;
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return boundaryIndex;
     }
 }
