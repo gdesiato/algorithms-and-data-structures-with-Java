@@ -32,7 +32,14 @@ public class BinarySearch {
 
         List<Integer> arrList2 = new ArrayList<>(Arrays.asList(30, 40, 50, 10, 20));
         System.out.println(findMinRotated(arrList2));
-        
+
+        // mountain array
+        List<Integer> arrList3 = new ArrayList<>(Arrays.asList(0, 1, 2, 3, 2, 1, 0));
+        System.out.println(peakOfMountainArray(arrList3));
+
+
+
+
     }
 
 
@@ -163,6 +170,24 @@ public class BinarySearch {
             int mid = left + (right - left) / 2;
             // if <= last element, then belongs to lower half
             if (arr.get(mid) <= arr.get(arr.size() - 1)) {
+                boundaryIndex = mid;
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return boundaryIndex;
+    }
+
+
+    // find the index of the peak element in a mountain array
+    public static int peakOfMountainArray(List<Integer> arr) {
+        int left = 0;
+        int right = arr.size() - 1;
+        int boundaryIndex = -1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (mid == arr.size()-1 || arr.get(mid) > arr.get(mid + 1)) {
                 boundaryIndex = mid;
                 right = mid - 1;
             } else {
