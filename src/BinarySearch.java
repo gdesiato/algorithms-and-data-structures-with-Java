@@ -14,6 +14,7 @@ public class BinarySearch {
 
         boolean[] arr = {false, false, true, true, true};
         System.out.println("first true value at index: " + findBoundary(arr));
+        System.out.println("The length of the array is: " + arr.length);
 
 
         List<Integer> arrList = new ArrayList<Integer>(Arrays.asList(2, 3, 5, 7, 11, 13, 17, 19));
@@ -36,6 +37,7 @@ public class BinarySearch {
         // mountain array
         List<Integer> arrList3 = new ArrayList<>(Arrays.asList(0, 1, 2, 3, 2, 1, 0));
         System.out.println(peakOfMountainArray(arrList3));
+        System.out.println("The size of the list is: " + arrList3.size());
 
 
 
