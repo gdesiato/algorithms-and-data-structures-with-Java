@@ -33,5 +33,13 @@ public class Main {
 
         System.out.println(result4);
 
+
+        String prova = "cicciaci";
+        String subS = prova.substring(prova.length()-2);
+
+
+        System.out.println(prova.substring(0, 0+2).equals(subS));
+
+
     }
 }
