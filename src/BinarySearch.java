@@ -199,7 +199,7 @@ public class BinarySearch {
         }
         return boundaryIndex;
     }
-    
+
 
     // distributing reading tasks of newspapers among a number of coworkers
     public static int newspapersSplit(List<Integer> newspapersReadTimes, int numCoworkers) {
