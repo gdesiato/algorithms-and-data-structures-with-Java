@@ -48,8 +48,4 @@ public class BinaryTreeMain {
             return Math.max(leftDepth, rightDepth) + 1; // Return the depth of this node
         }
     }
-
-
-
-
 }
